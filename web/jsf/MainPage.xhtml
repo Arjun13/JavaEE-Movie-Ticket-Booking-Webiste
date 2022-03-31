@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Welcome Page</title>
+        <link rel="stylesheet" href="mystyle.css" />
+    </h:head>
+    <h:body>
+        <div class="first-flex-container" style="font-size: 30px;">
+                <h2> Welcome to The AMX Movie Theater </h2>
+            </div>
+
+            <h:form>
+                <h:panelGrid columns="1">
+                    <div style="margin-top: 60px; ">
+                        <h:outputLabel value="Please enter a zipcode: " style="font-size: 80px; margin-left: 390px; " />
+                    </div>
+                    <h:panelGroup style=" margin-left: 450px; margin-top: 50px;">
+                        <h:inputText  value="#{mainPageBean.zip.zipcode}" validator="#{mainPageBean.validateZipcode}" required="true" requiredMessage="Please enter a 5 digit zipcode!" style="text-align: center; width: 500px; height: 30px; font-size: 20px;"/>
+                        <h:commandButton value="Submit" action="ShowTheaterNames" class="theaterNameButton" style="width: 100px;" />
+                    </h:panelGroup>
+                </h:panelGrid>
+            </h:form>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Seat Selection</title>
+        <link rel="stylesheet" href="mystyle.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="mystyle.css" />
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='mystyle.css'/>
+    </h:head>
+    <h:body>
+        <div class="first-flex-container">
+            <h2>AMX Theater</h2>
+            <h2>#{mainPageBean.zip.zipcode}</h2>
+            <h2>#{mainPageBean.zip.theatername}</h2>
+        </div>
+        
+        <div>
+            <h1 class="ticketText">The number of seat remaining: <span class="seatRemaining">&nbsp;50</span></h1>
+        </div>
+
+        <h:form>
+            <h:panelGrid columns="3"  columnClasses="column1Class, column2Class, column3Class">
+                <h:outputText value="Type of Ticket" class="seatSelection" style="text-transform: uppercase; font-weight: bold; margin-left: 200px; color: #540b0e"/>
+                <h:outputText value="Quantity" class="seatSelection" style="text-transform: uppercase; font-weight: bold; color: #540b0e"/>
+                <h:outputText value="Price" class="seatSelection" style="text-transform: uppercase; font-weight: bold; color: #540b0e"/>
+                
+                
+                <h:outputText value="General" class="seatSelection" style="margin-left: 200px; color: #4d4d4d"/>
+                <h:selectOneMenu class="seatSelectionButton" value = "#{mainPageBean.adultSeatNum}"> 
+                    <f:selectItem itemValue="#{null}" itemLabel="--Select--" noSelectionOption="true"/>
+                    <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                    <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                    <f:selectItem itemValue = "3" itemLabel = "3" /> 
+                    <f:selectItem itemValue = "4" itemLabel = "4" /> 
+                    <f:selectItem itemValue = "5" itemLabel = "5" />
+                    <f:selectItem itemValue = "6" itemLabel = "6" /> 
+                    <f:selectItem itemValue = "7" itemLabel = "7" /> 
+                    <f:selectItem itemValue = "8" itemLabel = "8" /> 
+                    <f:selectItem itemValue = "9" itemLabel = "9" /> 
+                    <f:selectItem itemValue = "10" itemLabel = "10" />
+                </h:selectOneMenu>  
+                <h:outputText value="$11.00" class="seatSelection" style="color: #4d4d4d"/>
+                
+                <h:outputText value="Senior (65+ yrs)" class="seatSelection" style="margin-left: 200px; color: #4d4d4d"/>
+                <h:selectOneMenu class="seatSelectionButton" value = "#{mainPageBean.seniorSeatNum}"> 
+                    <f:selectItem itemValue="#{null}" itemLabel="--Select--" noSelectionOption="true"/>
+                    <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                    <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                    <f:selectItem itemValue = "3" itemLabel = "3" /> 
+                    <f:selectItem itemValue = "4" itemLabel = "4" /> 
+                    <f:selectItem itemValue = "5" itemLabel = "5" />
+                    <f:selectItem itemValue = "6" itemLabel = "6" /> 
+                    <f:selectItem itemValue = "7" itemLabel = "7" /> 
+                    <f:selectItem itemValue = "8" itemLabel = "8" /> 
+                    <f:selectItem itemValue = "9" itemLabel = "9" /> 
+                    <f:selectItem itemValue = "10" itemLabel = "10" />     
+                </h:selectOneMenu>  
+                <h:outputText value="$8.50" class="seatSelection" style="color: #4d4d4d"/>
+                
+                <h:outputText value="Student (w/ ID)" class="seatSelection" style="margin-left: 200px; color: #4d4d4d"/>
+                <h:selectOneMenu class="seatSelectionButton" value = "#{mainPageBean.studentSeatNum}"> 
+                    <f:selectItem itemValue="#{null}" itemLabel="--Select--" noSelectionOption="true"/>
+                    <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                    <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                    <f:selectItem itemValue = "3" itemLabel = "3" /> 
+                    <f:selectItem itemValue = "4" itemLabel = "4" /> 
+                    <f:selectItem itemValue = "5" itemLabel = "5" />
+                    <f:selectItem itemValue = "6" itemLabel = "6" /> 
+                    <f:selectItem itemValue = "7" itemLabel = "7" /> 
+                    <f:selectItem itemValue = "8" itemLabel = "8" /> 
+                    <f:selectItem itemValue = "9" itemLabel = "9" /> 
+                    <f:selectItem itemValue = "10" itemLabel = "10" />     
+                </h:selectOneMenu>  
+                <h:outputText value="$8.50" class="seatSelection" style="color: #4d4d4d"/>
+                
+                <h:outputText value="Military (w/ ID)" class="seatSelection" style="margin-left: 200px; color: #4d4d4d"/>
+                <h:selectOneMenu class="seatSelectionButton" value = "#{mainPageBean.militarySeatNum}"> 
+                    <f:selectItem itemValue="#{null}" itemLabel="--Select--" noSelectionOption="true"/>
+                    <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                    <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                    <f:selectItem itemValue = "3" itemLabel = "3" /> 
+                    <f:selectItem itemValue = "4" itemLabel = "4" /> 
+                    <f:selectItem itemValue = "5" itemLabel = "5" />
+                    <f:selectItem itemValue = "6" itemLabel = "6" /> 
+                    <f:selectItem itemValue = "7" itemLabel = "7" /> 
+                    <f:selectItem itemValue = "8" itemLabel = "8" /> 
+                    <f:selectItem itemValue = "9" itemLabel = "9" /> 
+                    <f:selectItem itemValue = "10" itemLabel = "10" />     
+                </h:selectOneMenu>  
+                <h:outputText value="$8.50" class="seatSelection" style="color: #4d4d4d"/>
+                
+                <h:commandButton class="button" style="width: 250px; margin-left: 200px" value="Back to ShowTimes" action="ShowTimes" />
+                <h:outputText/>
+                <h:commandButton class="button" style="float: right; margin: 30px 150px 0px 0px;" value="Submit" action="Payment" />
+                
+            </h:panelGrid>
+            
+        </h:form>
+        
+        
+    </h:body>
+</html>
+

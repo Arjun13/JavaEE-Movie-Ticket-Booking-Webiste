@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Movie Description</title>
+        <link rel="stylesheet" href="mystyle.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <style>
+            .checked 
+            {
+                color: #f48c06;
+            }
+            table, td 
+            {
+                text-align: center;
+                /*border: 1px solid black;*/
+            }
+
+            table
+            {
+                width: 100%;
+            }
+            td.castTD
+            {
+                width: 22%;
+            }
+        </style>
+    </h:head>
+    
+    <h:body>
+        <h2><div class="first-flex-container">
+            <table>
+                <tr>
+                    <td>AMX Theater</td>
+                    <td>#{mainPageBean.zip.zipcode}</td>
+                    <td>TMDb Rating<br/>
+                        <span class="fa fa-star checked"></span>
+                        <span style="font-style: italic;">&nbsp;#{mainPageBean.showMovieRatings()} / 10</span>
+                    </td>
+                </tr>
+            </table>
+        </div></h2>
+        
+        
+        <h:form style="padding-left: 50px; padding-right: 50px;">
+            
+            <h:panelGrid class="myUIRepeat" columns="2" style="padding-right: 50px;">
+                <h:graphicImage class="poster" value="/Posters/#{movie.moviename}.jpg" height="510" width="350"  style="margin-right: 50px;"/>
+                <h:panelGrid columns="1">
+                    
+                    <h:outputText value="#{mainPageBean.desc.moviename}" class="movieNameSpacing" style="font-size: 35px;"/>
+                    <br class="myClass"/>
+                    
+                    <h:outputText class="movieDescSpacing" value="#{mainPageBean.desc.description}"/>
+                    <br class="myClass"/>
+                    
+                     
+                    <table class="movieDescSpacing">
+                        <tr>
+                            <td class="castTD" style="font-weight: bold; font-size: 30px; vertical-align: top;">Cast &amp; Crew:</td>
+                            <td style="text-align: left; font-size: 30px;"><i>#{mainPageBean.showCast()}</i></td>
+                        </tr>
+                    </table>
+                    
+                    <br class="myClass"/>
+                    <h:commandButton class="theaterNameButton" value="Back to All Showings" action="ShowTimes"/>
+                </h:panelGrid>
+            </h:panelGrid>
+            
+        </h:form>
+        
+    </h:body>
+</html>
+

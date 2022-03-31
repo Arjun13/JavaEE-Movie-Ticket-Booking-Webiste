@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Showings</title>
+        <link rel="stylesheet" href="mystyle.css" />
+    </h:head>
+    <h:body>
+        <div class="first-flex-container">
+            <h2>AMX Theater</h2>
+            <h2>#{mainPageBean.zip.zipcode}</h2>
+            <h2>#{mainPageBean.zip.theatername}</h2>
+        </div>
+        
+        <h:form style="padding-left: 30px;">
+            <ui:repeat value="#{mainPageBean.movieNames}" var="movie">
+                <h:panelGroup class="myUIRepeat" layout="block">
+                    <h:panelGrid columns="2" >
+                        <h:commandLink action="#{mainPageBean.showDescriptionPage(movie)}">
+                            <h:graphicImage class="poster" value="/Posters/#{movie.moviename}.jpg" height="300" width="200" />
+                        </h:commandLink>
+                        <h:panelGrid columns="1">
+                            <h:outputText value="#{movie.moviename}" class="movieNameSpacing"/><br class="myClass" /> 
+                            <ui:repeat value="#{mainPageBean.getAllShowTime(movie)}" var="showing" varStatus="status">
+                                <li>
+                                    <h:commandButton class="button" value="#{showing.showtime}" action="SeatSelection"/>
+                                </li>
+                            </ui:repeat>
+                        </h:panelGrid>
+                        <br/><br/>
+                    </h:panelGrid>
+                </h:panelGroup>
+            </ui:repeat>
+        </h:form>
+    </h:body>
+</html>
+
